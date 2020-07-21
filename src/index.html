@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Registration page</title>
+    </head>
+    <body>
+        <form class="registration-form">
+            <h1>Registration page</h1>
+            <div class="tabbed">
+                <ul class="tabbed__tabs">
+                    <li class="tab tab--active">
+                        <a href="#page-mobile" class="tab__link"
+                            onclick="return RegistrationForm.tabLinkClick(event)">Mobile</a>
+                    </li>
+                    <li class="tab">
+                        <a href="#page-email" class="tab__link"
+                            onclick="return RegistrationForm.tabLinkClick(event)">Email</a>
+                    </li>
+                </ul>
+                <div class="tabbed__pages">
+                    <div class="page page--active" id="page-mobile">
+                        <div class="text-field">
+                            <label for="mobile">Mobile:</label>
+                            <input type="text" name="mobile" id="mobile" value=""
+                                placeholder="(+000) 00 0000 000"
+                                oninput="RegistrationForm.checkMobile(event)" />
+                            <div class="field__error"></div>
+                        </div><!--field-row-->
+                    </div><!--page-->
+                    <div class="page" id="page-email">
+                        <div class="text-field">
+                            <label for="email">Email:</label>
+                            <input type="text" name="mobile" id="email" value=""
+                                placeholder="name@example.com" 
+                                oninput="RegistrationForm.checkEmail(event)" />
+                            <div class="field__error"></div>
+                        </div><!--field-row-->
+                    </div><!--page-->
+                </div><!--tabbed__pages-->
+            </div><!--tabbed-->
+            <div class="vertical-spacer"></div>
+            <fieldset class="radio-group">
+                <legend class="radio-group__title">
+                    Currency:
+                </legend>
+                <div class="radio-group__item"
+                    onclick="RegistrationForm.radioGroupItemClick(event)">
+                    <input type="radio" name="currency" value="eur" id="eur" />
+                    <label for="eur">
+                        € (EUR, Euro)
+                    </label>
+                </div><!--radio-group__item-->
+                <div class="radio-group__item"
+                    onclick="RegistrationForm.radioGroupItemClick(event)">
+                    <input type="radio" name="currency" value="usd" id="usd" />
+                    <label for="usd">
+                        $ (USD, American dollar)
+                    </label><br />
+                </div><!--radio-group__item-->
+                <div class="radio-group__item"
+                    onclick="RegistrationForm.radioGroupItemClick(event)">
+                    <input type="radio" name="currency" value="rsd" id="rsd" />
+                    <label for="rsd">
+                        дин (RSD, Serbian dinar)
+                    </label>
+                </div><!--radio-group__item-->
+            </fieldset>
+            <div class="vertical-spacer"></div>
+            <div class="checkbox" onclick="RegistrationForm.checkboxClick(event)">
+                <input type="checkbox" name="terms" id="terms" />
+                <label for="terms">
+                    I have read and accept Terms &amp; Conditions
+                </label>
+            </div><!--checkbox-->
+            <div class="checkbox" onclick="RegistrationForm.checkboxClick(event)">
+                <input type="checkbox" name="promo" id="promo" checked="checked" />
+                <label for="promo">
+                    I agree to receive promotional emails and notifications
+                </label>
+            </div><!--checkbox-->
+            <div class="vertical-spacer"></div>
+            <button class="submit-button" type="button"
+                onclick="RegistrationForm.submitButtonClick(event)">
+                Submit
+            </button>
+            <div class="registration-error"></div>
+            <div class="loading"></div>
+            <div class="registration-success">
+                <div class="registration-success__text">
+                    <h1>Success!</h1>
+                    <p>
+                        Congratulations, you have successfully completed the
+                        registration process. You may now proceed to login.
+                    </p>
+                    <button class="login-button" type="button"
+                        onclick="RegistrationForm.loginButtonClick()">
+                        Login
+                    </button>
+                </div><!--registration-success__text-->
+            </div><!--registration-success-->
+        </form>
+    </body>
+</html>
+

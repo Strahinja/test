@@ -1,0 +1,226 @@
+$primary: #44a
+$primary-hover: #66c
+$primary-element-hover-bg: rgba(0,0,255,.1)
+$success: #4a4
+$success-hover: #6c6
+$error: #a44
+$border-color: #ddd
+$border-radius: 3px
+$button-border-radius: $border-radius
+$checkbox-height: 2.5em
+$checkbox-hover-bg: $primary-element-hover-bg
+$link-fg: $primary
+$loading-bg: rgba(255,255,255,.7)
+$loading-border-radius: $border-radius
+$login-button-bg: $success
+$login-button-fg: #fff
+$login-button-hover-bg: $success-hover
+$page-width: 1024px
+$radio-height: 2.5em
+$radio-group-item-hover-bg: $primary-element-hover-bg
+$radio-group-title-fg: $primary
+$radio-group-title-bg: #fff
+$registration-success-bg: #fff
+$registration-success-border-radius: $border-radius
+$submit-button-bg: $primary
+$submit-button-fg: #fff
+$submit-button-hover-bg: $primary-hover
+$tab-link-hover-bg: $primary-element-hover-bg
+$text-field-border: 1px solid $primary
+$text-field-focus-bg: $primary-element-hover-bg
+$text-field-focus-border: 2px solid $primary
+$text-field-height: 2.5em
+$vertical-spacer-height: 1.5em
+
+html, body, *
+    font-family: "Roboto", "Arial", "Helvetica", sans-serif
+    font-size: 12pt
+
+h1
+    font-size: 2em
+    font-weight: bold
+    margin: 0
+    margin-bottom: 1em
+
+.registration-form
+    display: block
+    position: relative
+    border: 1px solid $border-color
+    border-radius: $border-radius
+    margin: 2em auto 0 auto
+    padding: 1em
+    max-width: $page-width
+
+.tabbed__tabs
+    display: flex
+    list-style-type: none
+    padding: 0
+    margin: 0
+    border-top: 1px solid $border-color
+    border-bottom: 1px solid $border-color
+
+.tab
+    display: inline-flex
+    padding: 0
+
+.tab__link,
+.tab__link:visited
+    display: inline-block
+    padding: 0.5em 1em
+    text-decoration: none
+    color: $link-fg
+
+.tab__link:hover
+    background-color: $tab-link-hover-bg
+
+.tab--active
+    border-bottom: 2px solid $link-fg
+
+.tabbed__pages
+    position: relative
+    padding: 0
+    margin: 1.5em 0
+
+.page
+    display: none
+    padding: 1em
+
+.page--active
+    display: block
+
+.field__error
+    display: none
+    color: $error
+    font-size: .7em
+    padding: .5em 0
+
+.field__error--active
+    display: block
+
+.text-field input
+    border: none
+    border-bottom: $text-field-border
+    line-height: $text-field-height
+    padding: 0 .5em
+    margin: 0 .5em
+
+.text-field input:focus
+    border: none
+    border-bottom: $text-field-focus-border
+    background-color: $text-field-focus-bg
+
+.radio-group
+    border: 1px solid $border-color
+    border-radius: $border-radius
+
+.radio-group__title
+    display: inline-block
+    margin-left: 1em
+    padding: 0 .5em
+    color: $radio-group-title-fg
+    background-color: $radio-group-title-bg
+
+.radio-group__item
+    line-height: $radio-height
+    padding: 0 .7em
+    cursor: pointer
+
+.radio-group__item label,
+.radio-group__item input[type="radio"]
+    cursor: pointer
+
+.radio-group__item label
+    display: inline-block
+
+.radio-group__item:hover
+    background-color: $radio-group-item-hover-bg
+
+.checkbox
+    line-height: $checkbox-height
+    padding: 0 .7em
+    cursor: pointer
+
+.checkbox:hover
+    background-color: $checkbox-hover-bg
+
+.vertical-spacer
+    height: $vertical-spacer-height
+    width: 100%
+
+.submit-button
+    border: none
+    background-color: $submit-button-bg
+    color: $submit-button-fg
+    border-radius: $button-border-radius
+    padding: .5em 1em
+    text-transform: uppercase
+
+.submit-button:hover
+    background-color: $submit-button-hover-bg
+
+.loading
+    display: none
+    border-radius: $loading-border-radius
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background-color: $loading-bg
+
+.loading--active
+    display: flex
+    align-items: center
+    justify-content: center
+
+@keyframes rotate
+    100%
+        transform: rotate(360deg)
+
+.loading.loading--active::before
+    content: ' '
+    display: flex
+    border-radius: 50%
+    background: transparent
+    width: 10em
+    height: 10em
+    animation: rotate 2s linear 0s infinite normal
+    border: 16px solid #99f
+    border-top: 16px solid #44a
+    transition: all .25s ease
+
+.registration-error
+    display: none
+    color: $error
+    font-weight: bold
+    margin-left: 1em
+
+.registration-error--active
+    display: inline-block
+
+.registration-success
+    display: none
+    border-radius: $registration-success-border-radius
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+    background-color: $registration-success-bg
+
+.registration-success--active
+    display: flex
+    align-items: center
+    justify-content: center
+
+.login-button
+    border: none
+    background-color: $login-button-bg
+    color: $login-button-fg
+    border-radius: $button-border-radius
+    padding: .5em 1em
+    text-transform: uppercase
+
+.login-button:hover
+    background-color: $login-button-hover-bg
+
