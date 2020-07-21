@@ -14,7 +14,7 @@ $ yarn
 $ yarn build
 ```
 
-After the build, output files will be in `./dist` filder.
+After the build, output files will be in `./dist` folder.
 
 ## Dev server
 
